@@ -1,0 +1,18 @@
+[package]
+name = "ceno-sum-rayon-test"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+rayon = "1.10"
+either = "1.15.0"
+itertools = "0.14.0"
+rand = "0.8"
+
+ff_ext = { git = "https://github.com/Lagrange-Labs/ceno", branch = "fvs-rayon-yeild-in-sync-transcript" }
+multilinear_extensions = { git = "https://github.com/Lagrange-Labs/ceno", branch = "fvs-rayon-yeild-in-sync-transcript" }
+p3 = { git = "https://github.com/Lagrange-Labs/ceno", branch = "fvs-rayon-yeild-in-sync-transcript" }
+poseidon = { git = "https://github.com/Lagrange-Labs/ceno", branch = "fvs-rayon-yeild-in-sync-transcript" }
+sumcheck = { git = "https://github.com/Lagrange-Labs/ceno", branch = "fvs-rayon-yeild-in-sync-transcript" }
+sumcheck_macro = { git = "https://github.com/Lagrange-Labs/ceno", branch = "fvs-rayon-yeild-in-sync-transcript" }
+transcript = { git = "https://github.com/Lagrange-Labs/ceno", branch = "fvs-rayon-yeild-in-sync-transcript" }
