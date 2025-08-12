@@ -22,11 +22,13 @@ fn main() {
         .map(|_| MultilinearExtension::<E>::random(nv, &mut rng))
         .collect_vec();
 
-    rayon::in_place_scope(|scope| {
+    rayon::scope(|scope| {
         for _ in 0..2 {
             scope.spawn(|_scope_1| {
+                let num_threads = usize::next_power_of_two(rayon::current_num_threads()) / 2;
+                println!("current num threads {num_threads}");
                 let virtual_poly_v2 = VirtualPolynomials::new_from_monimials(
-                    rayon::current_num_threads(),
+                    num_threads,
                     nv,
                     vec![Term {
                         scalar: Either::Right(E::ONE),
