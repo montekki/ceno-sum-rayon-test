@@ -10,15 +10,11 @@ itertools = "0.14.0"
 rand = "0.8"
 
 # this branch will lock
-# ff_ext = { git = "https://github.com/Lagrange-Labs/ceno", branch = "fvs-split-ceno-codebase-fixes" }
-# multilinear_extensions = { git = "https://github.com/Lagrange-Labs/ceno", branch = "fvs-split-ceno-codebase-fixes" }
-# p3 = { git = "https://github.com/Lagrange-Labs/ceno", branch = "fvs-split-ceno-codebase-fixes" }
-# sumcheck = { git = "https://github.com/Lagrange-Labs/ceno", branch = "fvs-split-ceno-codebase-fixes" }
-# transcript = { git = "https://github.com/Lagrange-Labs/ceno", branch = "fvs-split-ceno-codebase-fixes" }
+ff_ext = { git = "https://github.com/Lagrange-Labs/ceno", branch = "fvs-split-ceno-codebase-fixes" }
+multilinear_extensions = { git = "https://github.com/Lagrange-Labs/ceno", branch = "fvs-split-ceno-codebase-fixes" }
+p3 = { git = "https://github.com/Lagrange-Labs/ceno", branch = "fvs-split-ceno-codebase-fixes" }
+sumcheck = { git = "https://github.com/Lagrange-Labs/ceno", branch = "fvs-split-ceno-codebase-fixes" }
+transcript = { git = "https://github.com/Lagrange-Labs/ceno", branch = "fvs-split-ceno-codebase-fixes" }
 
-# this branch probably not
-ff_ext = { git = "https://github.com/Lagrange-Labs/ceno", branch = "fvs-phase1-sumcheck-par-iter-mut" }
-multilinear_extensions = { git = "https://github.com/Lagrange-Labs/ceno", branch = "fvs-phase1-sumcheck-par-iter-mut" }
-p3 = { git = "https://github.com/Lagrange-Labs/ceno", branch = "fvs-phase1-sumcheck-par-iter-mut" }
-sumcheck = { git = "https://github.com/Lagrange-Labs/ceno", branch = "fvs-phase1-sumcheck-par-iter-mut" }
-transcript = { git = "https://github.com/Lagrange-Labs/ceno", branch = "fvs-phase1-sumcheck-par-iter-mut" }
+tracing-profile = { version = "0.10.9", features = ["perfetto"] }
+tracing = "0.1.41"

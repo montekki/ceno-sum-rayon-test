@@ -7,6 +7,7 @@ use multilinear_extensions::{
 use p3::field::FieldAlgebra;
 use rand::thread_rng;
 use sumcheck::structs::IOPProverState;
+use tracing::Level;
 use transcript::BasicTranscript as Transcript;
 
 const NUM_DEGREE: usize = 3;
@@ -15,6 +16,8 @@ const NV: usize = 23;
 type E = GoldilocksExt2;
 
 fn main() {
+    let _guard = tracing_profile::init_tracing().unwrap();
+
     let nv = NV;
 
     let mut rng = thread_rng();
@@ -37,8 +40,12 @@ fn main() {
                 );
 
                 let mut prover_transcript = Transcript::new(b"test");
+                let my_span = tracing::span!(Level::INFO, "proving").entered();
+
                 let (_proof, state) =
                     IOPProverState::<E>::prove(virtual_poly_v2, &mut prover_transcript);
+
+                my_span.exit();
                 println!("s1 challenges {:?}", state.collect_raw_challenges());
             });
         }
